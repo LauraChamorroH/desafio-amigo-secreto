@@ -2,5 +2,5 @@ En este proyecto se busca crear un página en donde el usuario ingrese un listad
 
 Esta página se encuentra en desarrollo.
 
-Más adelante se incluitá un video de cómo se puede utilizar esta página.
+Más adelante se incluirá un paso a paso de cómo se puede utilizar esta página.
 
