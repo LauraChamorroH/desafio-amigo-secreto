@@ -36,8 +36,26 @@ function actualizarListaAmigos(){
         }
 }
 
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+}
+
 //Función para sortear amigo
-
-    //Debo crear una acción de randomizar los valores de entre la lista de amigos
-
+function sortearAmigo (){
+    //Verificar que la variable amigos no está vacía
+    if (amigos.length===0){
+        alert ('Comienza agregando un nombre de un amigo');
+        return;
+    }
+    //Crear la acción de randomizar los valores en la lista de amigos para elegir uno
+    let amigoSorteado = Math.floor(Math.random()*amigos.length);
+    console.log(amigoSorteado);
+    asignarTextoElemento('#resultado', `El amigo secreto es: ${amigoSorteado}`);
+    document.getElementById('listaAmigos').innerHTML = "";
+    amigos = [];
+}
+    
     //Mostrar el nombre elegido en un alert
+
+sortearAmigo ();
