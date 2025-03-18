@@ -3,8 +3,6 @@
 
 //Aquí se busca hacer la variable para listar los amigos, crear el array amigos
 let amigos = [];
-//Aquí se busca hacer la variable para el amigoSorteado
-
 
 //Función para que la persona agregue un nombre al hacer click en el botón
 function agregarAmigo(){
@@ -15,6 +13,14 @@ function agregarAmigo(){
         alert('Por favor, inserte un nombre');
         return;
     } 
+
+    if (amigos.includes(nombreDeAmigo)) {
+        alert("Este nombre ya ha sido ingresado. No puedes agregarlo nuevamente.");
+        'amigo'.valueOf = "";
+        limpiarCaja();
+        return;
+    }
+
     amigos.push(nombreDeAmigo);
     limpiarCaja();
     actualizarListaAmigos();
@@ -49,13 +55,11 @@ function sortearAmigo (){
         return;
     }
     //Crear la acción de randomizar los valores en la lista de amigos para elegir uno
-    let amigoSorteado = Math.floor(Math.random()*amigos.length);
-    console.log(amigoSorteado);
+    const indice = Math.floor(Math.random()*amigos.length);
+    const amigoSorteado = amigos[indice];
     asignarTextoElemento('#resultado', `El amigo secreto es: ${amigoSorteado}`);
     document.getElementById('listaAmigos').innerHTML = "";
     amigos = [];
 }
-    
-    //Mostrar el nombre elegido en un alert
 
 sortearAmigo ();
